@@ -36,7 +36,7 @@
   --CLR-GREY-5: 218, 100%, 98%;
   /* grey used for paragraphs */
 
-  --CLR-GREY-BLUE: hsl(216, 35%, 31%);
+  --CLR-GREY-BLUE: 216, 35%, 31%;
   --CLR-DEEP-GRAY-BLUE: #162f56;
 
   --CLR-WHITE: 0, 0%, 100%;
@@ -49,7 +49,7 @@
   /* --FS-PRIMARY-FALLBACK: clamp(50%, 1.5dvw, 62.5%); */
 
   --TRANSITION: all 0.3s linear;
-  --LETTER-SPACING: 0.25rem;
+  --LETTER-SPACING: 0.025em;
   --RADIUS: 0.5rem;
   --LIGHT-SHADOW: 0 5px 15px rgba(0, 0, 0, 0.1);
   --DART-SHADOW: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -88,6 +88,10 @@ audio,
 picture,
 video {
   max-width: 100%;
+  display: block;
+}
+
+svg {
   display: block;
 }
 
@@ -146,6 +150,16 @@ p {
 }
 /* 
 ===================================
+|| ANIMATIONS                     |
+===================================
+*/
+@keyframes uplifter {
+  100% {
+    transform: translateY(-50%);
+  }
+}
+/*
+===================================
 || UTILITIES                      |
 ===================================
 */
@@ -169,6 +183,13 @@ p {
 }
 .btn:is(:focus, :focus, :hover) {
   background-color: hsl(var(--CLR-PRIMARY-4));
+}
+
+.btn__icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  /*  w-3.5 h-3.5 */
 }
 .title {
   position: relative;
@@ -264,6 +285,7 @@ p {
   gap: 0.8rem;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   overflow: auto;
   background-color: hsl(var(--CLR-WHITE));
   position: fixed;
@@ -564,6 +586,7 @@ p {
 
 @media screen and (min-width: 62em) {
   .payment__dropdown__container {
+    /* box-shadow: 0 0 2px 55px rgba(255, 0, 0, 0.1); */
     padding: 2.4rem;
     position: absolute;
     left: 1.6rem;
